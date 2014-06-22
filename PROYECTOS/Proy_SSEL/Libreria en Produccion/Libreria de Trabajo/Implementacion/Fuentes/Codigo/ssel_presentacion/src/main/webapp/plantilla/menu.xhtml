@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<h:form id="menui">
+		<p:panel header="Menu">
+			<p:dataTable var="permi" value="#{loginBean.permisos}">
+					<p:column>
+							<p:commandLink value="#{permi.menunombre}" action="#{navigationBean.redirectTo}" actionListener="#{navigationBean.listener}" >
+								<f:attribute name="root" value="#{permi.nomarchivo}" />
+								<f:attribute name="tipoUsuario" value="#{permi.paratipo}"/>
+			    			</p:commandLink>
+					</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+	
+</ui:composition>
+</html>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/64/trunk/srh_presentacion/src/main/webapp/plantilla
+END
+menu.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/55/trunk/srh_presentacion/src/main/webapp/plantilla/menu.xhtml
+END
+cabecera.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/41/trunk/srh_presentacion/src/main/webapp/plantilla/cabecera.xhtml
+END
+template.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/41/trunk/srh_presentacion/src/main/webapp/plantilla/template.xhtml
+END
+template_cp.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/64/trunk/srh_presentacion/src/main/webapp/plantilla/template_cp.xhtml
+END
