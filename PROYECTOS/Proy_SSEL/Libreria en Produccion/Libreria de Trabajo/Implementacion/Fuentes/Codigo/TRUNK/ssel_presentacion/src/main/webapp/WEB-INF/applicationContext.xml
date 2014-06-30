@@ -3,7 +3,6 @@
         xmlns:tx="http://www.springframework.org/schema/tx"
         xmlns:context="http://www.springframework.org/schema/context"
         xsi:schemaLocation="http://www.springframework.org/schema/beans
- 
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
  
 http://www.springframework.org/schema/tx
@@ -15,60 +14,30 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
  
  	<context:annotation-config />
-    <!-- Beans Declaration -->
+
     <context:component-scan base-package="com.unmsm.ssel"/>
-                                    
-<!--     <bean id="Administrador" class="unmsm.eapisw.taller.srh_persistencia.modelo.Administrador" />
-    <bean id="Hotel"         class="unmsm.eapisw.taller.srh_persistencia.modelo.Hotel" />
-    <bean id="Usuario"       class="unmsm.eapisw.taller.srh_persistencia.modelo.Usuario" />
-    <bean id="Permisos"       class="unmsm.eapisw.taller.srh_persistencia.modelo.Permisos" />
-    <bean id="TipoHabitacion"       class="unmsm.eapisw.taller.srh_persistencia.modelo.TipoHabitacion" />
-    <bean id="HabitacionIMG"       class="unmsm.eapisw.taller.srh_persistencia.modelo.HabitacionIMG" />
-    <bean id="Habitacion"       class="unmsm.eapisw.taller.srh_persistencia.modelo.Habitacion" /> -->
-    <!-- <bean id="Product" class="org.ejm.demo.modelo.Product" /> -->
+                                
+	<bean id="Subasta" 	 class="com.unmsm.ssel.persistencia.seel_persistencia.modelo.Subasta" />
+	<bean id="Categoria" class="com.unmsm.ssel.persistencia.seel_persistencia.modelo.Categoria" />
+    <bean id="Articulo"  class="com.unmsm.ssel.persistencia.seel_persistencia.modelo.Articulo" />
+    <bean id="Imagen"    class="com.unmsm.ssel.persistencia.seel_persistencia.modelo.Imagen" />
+    <bean id="Puja"      class="com.unmsm.ssel.persistencia.seel_persistencia.modelo.Puja" />
+    <bean id="Usuario"   class="com.unmsm.ssel.persistencia.seel_persistencia.modelo.Usuario" />
+    
  	
-    <!-- User Service Declaration -->
-<!--     <bean id="UserService" class="com.otv.user.service.UserService">
-        <property name="userDAO" ref="UserDAO" />
-    </bean> -->
-<!--     <bean id="admService" class="unmsm.eapisw.taller.srh_servicio.impl.AdministradorServicio">
-    <property name="admDAO" ref="AdministradorDAO"/>
- 	</bean> -->
+    <!-- User DAO Declaration --> 
+     <bean id="usuarioDAO" class="com.unmsm.ssel.persistencia.seel_persistencia.daoimpl.UsuarioDAO">
+        <property name="sessionFactory" ref="SessionFactory" />
+    </bean>
  	
-    <!-- User DAO Declaration -->
-<!--     <bean id="admDAO" class="unmsm.eapisw.taller.srh_persistencia.dao.impl.AdministradorDAO">
+ 	<bean id="subastaDAO" class="com.unmsm.ssel.persistencia.seel_persistencia.daoimpl.SubastaDAO">
         <property name="sessionFactory" ref="SessionFactory" />
     </bean>
-    <bean id="hotelDAO" class="unmsm.eapisw.taller.srh_persistencia.dao.impl.HotelDAO">
-        <property name="sessionFactory" ref="SessionFactory" />
-    </bean>
-    <bean id="usuarioDAO" class="unmsm.eapisw.taller.srh_persistencia.dao.impl.UsuarioDAO">
-        <property name="sessionFactory" ref="SessionFactory" />
-    </bean>
-    
-    <bean id="permisosDAO" class="unmsm.eapisw.taller.srh_persistencia.dao.impl.PermisosDAO">
-        <property name="sessionFactory" ref="SessionFactory" />
-    </bean>
-    
-    <bean id="tipoHabDAO" class="unmsm.eapisw.taller.srh_persistencia.dao.impl.TipoHabitacionDAO">
-        <property name="sessionFactory" ref="SessionFactory" />
-    </bean>
-    
-    <bean id="habitacionDAO" class="unmsm.eapisw.taller.srh_persistencia.dao.impl.HabitacionDAO">
-        <property name="sessionFactory" ref="SessionFactory" />
-    </bean>
-    
-    <bean id="habImgDAO" class="unmsm.eapisw.taller.srh_persistencia.dao.impl.HabitacionIMGDAO">
-        <property name="sessionFactory" ref="SessionFactory" />
-    </bean> -->
-<!--     <bean id="productDAO" class="org.ejm.demo.dao.impl.ProductDAO">
-        <property name="sessionFactory" ref="SessionFactory" />
-    </bean> -->
  
     <!-- Data Source Declaration -->
     <bean id="DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/bdssel" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/bd_subasta" />
         <property name="user" value="root" />
         <property name="password" value="root" />
         <property name="maxPoolSize" value="10" />
@@ -81,13 +50,12 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
         <property name="dataSource" ref="DataSource" />
         <property name="annotatedClasses">
             <list>
-<!--                 <value>unmsm.eapisw.taller.srh_persistencia.modelo.Administrador</value>
-                <value>unmsm.eapisw.taller.srh_persistencia.modelo.Hotel</value>
-                <value>unmsm.eapisw.taller.srh_persistencia.modelo.Usuario</value>
-                <value>unmsm.eapisw.taller.srh_persistencia.modelo.Permisos</value>
-                <value>unmsm.eapisw.taller.srh_persistencia.modelo.TipoHabitacion</value>
-                <value>unmsm.eapisw.taller.srh_persistencia.modelo.HabitacionIMG</value>
-                <value>unmsm.eapisw.taller.srh_persistencia.modelo.Habitacion</value> -->
+            	<value>com.unmsm.ssel.persistencia.seel_persistencia.modelo.Subasta</value>
+                <value>com.unmsm.ssel.persistencia.seel_persistencia.modelo.Categoria</value>
+                <value>com.unmsm.ssel.persistencia.seel_persistencia.modelo.Articulo</value>
+                <value>com.unmsm.ssel.persistencia.seel_persistencia.modelo.Imagen</value>
+                <value>com.unmsm.ssel.persistencia.seel_persistencia.modelo.Puja</value>
+                <value>com.unmsm.ssel.persistencia.seel_persistencia.modelo.Usuario</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -99,9 +67,9 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     </bean>
  
     <!-- Enable the configuration of transactional behavior based on annotations -->
-    <tx:annotation-driven transaction-manager="txManager"/>
+     <tx:annotation-driven transaction-manager="txManager"/> 
  
-    <!-- Transaction Manager is defined -->
+   <!--  Transaction Manager is defined -->
     <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
        <property name="sessionFactory" ref="SessionFactory"/>
     </bean>

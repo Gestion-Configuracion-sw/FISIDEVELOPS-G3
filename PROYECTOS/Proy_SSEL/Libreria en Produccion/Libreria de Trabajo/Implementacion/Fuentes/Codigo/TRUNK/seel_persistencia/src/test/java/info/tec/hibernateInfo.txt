@@ -1,0 +1,11 @@
+
+cascade: Este atributo indicará a hibernate cómo debe actuar cuando realicemos las operaciones de 
+persistencia de guardar, borrar, leer, etc. En el ejemplo el valor debe ser all indicando que deberemos 
+realizar la misma operación en Profesor que enDireccion.
+
+@Entity: Se aplica a la clase e indica que esta clase Java es una entidad a persistir. 
+Es una anotación estándar de JPA.
+
+@PrimaryKeyJoinColumn: Indicamos que la relación entre las dos tablas se realiza mediante la clave primaria.
+
+http://cursohibernate.es/doku.php?id=unidades:03_relaciones:06_cascade
