@@ -70,10 +70,10 @@
 	    <param-value>C:\Users\PC\Downloads\java\imagen</param-value>
 	    </init-param>
   </filter> -->
-  <filter-mapping>
+<!--   <filter-mapping>
   <filter-name>Primefaces Upload Filter</filter-name>
   <servlet-name>Faces Servlet</servlet-name>
-  </filter-mapping>
+  </filter-mapping> -->
   
   <welcome-file-list>
     <welcome-file>index.xhtml</welcome-file>
